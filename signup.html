@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Form</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet">  
+        <link rel="stylesheet" href="styleSignup.css">
+        <!-- <script src="register_script.js"></script> -->
+    </head>
+
+    <body>
+        <div class="registration-form">
+            <h1>Registration Form</h1>
+            <form action="/signup" method="POST">
+                <div class="main-form">
+
+                    <h2>Parent/Guardian Information</h2>
+                    <div class="form-group">
+                        <label for="username">Username<span class="required">*</span> :</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Set Password<span class="required">*</span> :</label>
+                        <input type="password" id="password" name="password"  minlength="8"required>
+                        <div class="error-message" id="passwordError"></div>
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <label for="confirmPassword">Confirm Password<span class="required">*</span>:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" minlength="8" required>
+                        <div class="error-message" id="confirmPasswordError"></div>
+                    </div> -->
+
+                    <div class="form-group">
+                        <label for="parentName">Parent/Guardian's Name<span class="required">*</span> :</label>
+                        <input type="text" id="parent" name="parentName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number<span class="required">*</span> :</label>
+                        <input type="text" id="contactNumber" name="contactNumber" maxlength="10" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email<span class="required">*</span> :</label>
+                        <input type="email" id="emailid" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address<span class="required">*</span> :</label>
+                        <textarea id="address" name="address" required></textarea>
+                    </div>
+
+                    <br>
+                    <h2>Child Information</h2>
+                    <div style="padding-bottom: 20px; padding-top: 20px;">
+                    <div class="childReg">
+                        <label for="childName">Child's Name<span class="required">*</span> :</label>
+                        <input type="text" id="child" name="childname" required>
+                    </div>
+
+                    <div class="childReg">
+                        <label for="dateOfBirth">Date of Birth<span class="required">*</span> :</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+
+
+                    <div class="childReg" style="padding-bottom: 10px;">
+                        <label for="birthCertificate">Upload Birth Certificate<span class="required">*</span> : </label>
+                        <input type="file" id="bc" name="birthcert" accept=".jpg, .jpeg, .png, .pdf" required>
+                    </div>
+                      <br>
+                    <div class="childReg" style="padding-bottom: 12px;">
+                      <label for="aadharImage">Upload Child's/Parents Aadhar Card<span class="required">*</span> : </label>
+                      <input type="file" id="aadhar" name="aadhar" accept=".jpg, .jpeg, .png" required>
+                  </div>
+                    <br>
+                    <div class="childReg" style="padding-bottom: 10px;">
+                        <label for="medicalHistory">Medical History (if any):</label>
+                        <textarea id="medicalHistory" name="medicalHistory"></textarea>
+                    </div>
+                </div>
+                    
+
+                    <!-- <div id="childR"></div>
+                    <button id="child1">Add Child</button> -->
+
+                    <!-- <script>
+                            let x = `<div class="childReg">
+                                        <label for="childName">Child's Name<span class="required">*</span> :</label>
+                                        <input type="text" id="childName" name="childName" required>
+                                    </div>
+
+                                    <div class="childReg">
+                                        <label for="dateOfBirth">Date of Birth<span class="required">*</span> :</label>
+                                        <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                                    </div>
+                                    <div class="childReg">
+                                        <label for="aadharNumber">Child's Aadhar Card Number: </label>
+                                        <input type="text" id="aadharNumber" name="aadharNumber" pattern="[0-9]{12}" maxlength="12"
+                                            placeholder="Enter 12-digit Father's Aadhar Card number">
+                                    </div>
+                                    <div class="childReg" style="padding-bottom: 12px;">
+                                        <label for="aadharImage">Upload Child's Aadhar Card: </label>
+                                        <input type="file" id="aadharImage" name="aadharImage" accept=".jpg, .jpeg, .png">
+                                    </div>
+                                    <div class="childReg" style="padding-bottom: 10px;">
+                                        <label for="birthCertificate">Upload Birth Certificate</label>
+                                        <input type="file" id="birthCertificate" name="birthCertificate" accept=".jpg, .jpeg, .png, .pdf">
+                                    </div>
+                                    <div class="childReg" style="padding-bottom: 10px;">
+                                        <label for="medicalHistory">Medical History (if any):</label>
+                                        <textarea id="medicalHistory" name="medicalHistory" rows="6" cols="114"></textarea>
+                                    </div>
+                                    <hr> <br>`;
+                            
+                                document.getElementById("child").
+                                addEventListener("click", function () {
+                                    document.getElementById("childR").
+                                    innerHTML += x;
+                            });
+    function validateForm() {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+    var passwordError = document.getElementById("passwordError");
+    var confirmPasswordError = document.getElementById("confirmPasswordError");
+
+    var uppercaseRegex = /[A-Z]/;
+    var specialCharacterRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/;
+    var numberRegex = /\d/;
+
+    if (!uppercaseRegex.test(password) || !specialCharacterRegex.test(password) || !numberRegex.test(password)) {
+        passwordError.innerHTML = "(Password must contain at least one uppercase letter, one special character, and one number)";
+        return false;
+    } else {
+        passwordError.innerHTML = "";
+    }
+
+    if (password !== confirmPassword) {
+        confirmPasswordError.innerHTML = "(Passwords do not match)";
+        return false;
+    } else {
+        confirmPasswordError.innerHTML = "";
+    }
+
+    return true;
+}
+                    </script> -->
+
+<input type="submit" id="reg" class="submitBtn" value="Register">
+
+                </div>
+            </form>
+        </div>
+    </body>
+
+</html>
