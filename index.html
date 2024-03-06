@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="C:\\Users\\Preeti Khamkar\\OneDrive\\Desktop\\KS-master\\views\\home.css">
+    <link rel="stylesheet" href="C:\\Users\\Preeti Khamkar\\OneDrive\\Desktop\\KS-master\\views\\flip.css">
+    <style>
+        .flip-card {
+    border-radius: 20px;
+    height: 250px;
+    width: 400px;
+    perspective: 1000px;
+  }
+  
+  /* Define the style of the card's inner container */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Define the style of the card's front and back sides */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  /* Define the style of the card's front side */
+  .flip-card-front {
+    color: black;
+  }
+  
+  /* Define the style of the card's back side */
+  .flip-card-back {
+    background-color: #5a88bb;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  
+  /* Add a flip effect when the card is hovered */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  #logo {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    float: left;
+}
+
+#hbuttons {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 800px;
+}
+
+.b {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: medium;
+    color: rgba(1, 1, 1, 0.701);
+    background-color: white;
+    border: none;
+    padding: 10px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+#h{
+    border-bottom: 1px solid blue;
+}
+
+.b:hover{
+    background-color: rgb(237, 241, 243);
+}
+.i {
+    padding: 2px;
+    height: 50px;
+    background-color: white;
+    border: none;
+}
+
+#header {
+    box-shadow: 5px 5px 10px rgb(235, 234, 234);
+}
+
+.gridHome {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 70px;  
+    padding-left: 120px;
+}
+
+.gH {
+    border-radius: 20px;
+    height: 250px;
+    width: 400px;
+}
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="home">
+        <header  height=100vh>
+            <div id="header">
+                <a href="#">
+                    <img src="C:\\Users\\Preeti Khamkar\\OneDrive\\Desktop\\KiddoShield\\Photos\\Free_Sample_By_Wix-removebg-preview.png" alt="logo" id="logo" >
+                </a>
+                <div id="hbuttons" style="float: left;" align:centre>
+                    <a href="index.html"><button class="b" id="h">HOME</button></a>
+                    <a href="C:\\Users\\Preeti Khamkar\\OneDrive\\Desktop\\KiddoShield\\About Us\\au.html"><button class="b">ABOUT US</button></a>
+                    <button class="b">HELP</button>
+                </div>
+                <a href="C:\\Users\\Preeti Khamkar\\OneDrive\\Desktop\\KiddoShield\\Profile\\profile.html">
+                    <div style="padding-left: 1400px;">
+                        <button class="i"><img src="C:\\Users\\Preeti Khamkar\\OneDrive\\Desktop\\KiddoShield\\Photos\\profile.png" class="i"></button>
+                    </div>
+                </a>
+            </div>
+        </header>
+        <main>
+            <section>
+                <p style="background-color: rgb(242, 246, 249); color: #24094b; font-size:large; font-family: Arial, Helvetica, sans-serif; font-weight: bolder; padding: 10px 10px 10px 30px;">Hello, User! </p>
+            </section>
+            <section>
+                <div class="gridHome">
+                    <div id="vaccine">
+                        <a href="vaccineInfo.ejs">
+                            <!-- Create a flip card container -->
+                            <div class="flip-card">
+                            
+                                <!-- Create a flip card inner container -->
+                                <div class="flip-card-inner">
+                                
+                                <!-- Create a flip card front side -->
+                                <div class="flip-card-front">
+                                    <img src="C:\Users\Preeti Khamkar\OneDrive\Desktop\KiddoShield\Photos\vaccine1" class="gH">
+                                </div>
+                            
+                                <!-- Create a flip card back side -->
+                                <div class="flip-card-back" style="border-radius: 20px;">
+                                    <h2 style="padding-top: 55px;">VACCINES</h2>
+                                    <p>Here is the list of vaccines according to age.</p>
+                                </div>
+                            
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="vaccine">
+                        <!-- Create a flip card container -->
+                        <a href="C:\\Users\\Preeti Khamkar\\OneDrive\\Desktop\\KiddoShield\\hospital.html">
+                            <div class="flip-card">
+                            
+                                <!-- Create a flip card inner container -->
+                                <div class="flip-card-inner">
+                                
+                                <!-- Create a flip card front side -->
+                                <div class="flip-card-front">
+                                    <img src="C:\Users\Preeti Khamkar\OneDrive\Desktop\KiddoShield\Photos\hospital2.jpeg" class="gH">
+                                </div>
+                            
+                                <!-- Create a flip card back side -->
+                                <div class="flip-card-back" style="border-radius: 20px;">
+                                    <h2 style="padding-top: 55px;">HOSPITALS</h2>
+                                    <p>Here is the list of hospitals.</p>
+                                </div>
+                            
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div id="vaccine">
+                        <a href="bookslot.ejs">
+                            <!-- Create a flip card container -->
+                            <div class="flip-card">
+                            
+                                <!-- Create a flip card inner container -->
+                                <div class="flip-card-inner">
+                                
+                                <!-- Create a flip card front side -->
+                                <div class="flip-card-front">
+                                    <img src="C:\Users\Preeti Khamkar\OneDrive\Desktop\KiddoShield\Photos\appointment1.jpeg" class="gH">
+                                </div>
+                            
+                                <!-- Create a flip card back side -->
+                                <div class="flip-card-back" style="border-radius: 20px;">
+                                    <h2 style="padding-top: 55px;">APPOINTMENT</h2>
+                                    <p>View, book, cancel appointment here.</p>
+                                </div>
+                            
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section style="padding-left: 120px; padding-right: 110px;">
+                <h1 style="color: rgb(76, 75, 75);">Why Is Vaccination Necessary?</h1>
+                <p>
+                    <ul style="color: rgb(80, 79, 79);">
+                        <li>
+                            <b>Immunization saves lives: </b>Modern vaccines and oral drops have protected children from a wide variety of dangerous and fatal diseases. 
+                            In fact, some historically prevalent diseases have now been eradicated from various countries owing to successful immunization campaigns.
+                        </li>
+                        <li>
+                            <b>Immunization protects the next generation: </b>Immunization has helped rid the world of some very serious debilitating diseases. 
+                            Polio, for example, has now been eradicated from the country, meaning current and future generations will never have to suffer from it
+                        </li>
+                        <li>
+                            <b>Immunization can help save money: </b>In a country like India where a large section of the population belongs to minimal income groups, supporting a family member suffering from a preventable disease can be difficult. It not only consumes all financial savings but at times, pushes families towards financial instability. The family member who is assigned the role of taking care of the sick often finds themselves unable to participate in economic activities and contribute to the income of the family. 
+                            All of this can be avoided by taking the correct vaccine at the right time
+                        </li>
+                        <li>
+                            <b>Various types of disabilities in children can be avoided by timely immunization and intervention: </b>All across the world, disability right movements are picking up and garnering support and forging new ways towards a more accessible, inclusive and sustainable world.
+                             While all these are extremely positive steps, one must not forget to acknowledge the benefits of childhood immunization against disability
+                        </li>
+                        <li>
+                            <b>Vaccines help your body create protective antibodies—proteins that help it fight off infections:</b>
+                             By getting vaccinated, you can protect yourself and also avoid spreading preventable diseases to other people in your community
+                        </li>
+                        <li>
+                            <b>By getting vaccinated you reduce your risk of serious illness: </b>Less serious illnesses mean fewer deaths, and less pressure on hospitals.
+                             Historically, immunisation campaigns have seen huge success, eradicating smallpox and drastically reducing mortality levels in diseases such as polio and measles
+                        </li>
+                    </ul>  
+                      
+                </p>
+            </section>
+
+            <!-- <div class="middle">
+                <div class="pop">
+                    <button>View Appointment</button>
+                    <button>Book Appointment</button>
+                    <button>Cancel Appointment</button>
+                </div>
+            </div> -->
+        </main>
+    </div>
+</div>
+</body>
+</html>

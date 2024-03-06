@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Slot</title>
+    <style>
+
+        th {
+            background-color: #f2f2f2;
+        } 
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex; /* Set the container to flex display */
+    align-items: flex-start; /* Align items to the top of the container */
+}
+
+h1, h2 {
+    color: #127a3f;
+    margin-left: 550px;
+}
+
+table {
+    /* width: 50%;
+    margin-left: 300px; */
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    background-color: #cff5ab;
+    border-radius: 10px; /* Add rounded corners */
+    overflow: hidden; 
+    
+}
+
+th, td {
+   
+    text-align: center; 
+    border: 1px solid #0e4d30;
+    padding: 12px;
+}
+
+
+form {
+    width: 50%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 300px;
+}
+
+form label {
+    font-weight: bold;
+    /* margin-left: 300px; */
+}
+
+form input[type="text"],
+form input[type="number"],
+form select,
+form button {
+    width: 50%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #43f44c;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 8px;
+    color: #333;
+}
+.popup-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body background="https://images.unsplash.com/photo-1579546928686-286c9fbde1ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGxpZ2h0JTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" style="background-repeat: no-repeat; background-attachment: fixed; background-size: 100%;">
+    <h1>✅Available Slots</h1>
+    <table id="slots-table">
+        <thead>
+            <tr>
+                <th>Hospital</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Vaccines available</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Wockhardt Hospital</td>
+                <td>09-10-2023</td>
+                <td>10:00 AM</td>
+                <td> <ul>
+                    <li>Measles and Mumps</li>
+                    <li>Chicken-Pox</li>
+                </ul></td>
+            </tr>
+            <tr>
+                <td>Breach Candy Hospital</td>
+                <td>11-10-2023</td>
+                <td>4:30 PM</td>
+                <td>
+                <ul>
+                <li>Rota Virus</li>
+                <li>Diphtheria</li>
+            </ul>
+            </td>
+            </tr>
+            <tr>
+                <td>Punamiya Hospital</td>
+                <td>11-10-2023</td>
+                <td>2:30 PM</td>
+                <td> <ul>
+                    <li>Measles</li>
+                    <li>Rubella</li>
+                </ul></td>
+            </tr>
+            <tr>
+                <td>Kasturba Hospital</td>
+                <td>13-10-2023</td>
+                <td>10:00 AM</td>
+                <td> <ul>
+                    <li>Jaundice</li>
+                    <li>Diphtheria</li>
+                </ul></td>
+            </tr>
+            <tr>
+                <td>Balaji Hospital</td>
+                <td>15-10-2023</td>
+                <td>1:30 PM</td>
+                <td> <ul>
+                    <li>Measles</li>
+                    <li>Diarrhoea</li>
+                </ul></td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <h1>✅Book Slot</h1>
+    <form id="booking-form">
+        <label for="child-name" value="childName">Child's Name:</label>
+        <input type="text" id="child-name" required><br><br>
+
+        <label for="hospital-dropdown">Select Hospital:</label>
+        <select id="hospital-dropdown" required>
+            <option name="hospital" value="hospital1">Wockhardt Hospital</option>
+            <option name="hospital" value="hospital2">Breach Candy Hospital</option>
+            <option name="hospital" value="hospital3">Punamiya Hospital</option>
+            <option name="hospital" value="hospital4">Kasturba Hospital</option>
+            <option name="hospital" value="hospital5">Balaji Hospital</option>
+        </select><br><br>
+    
+        <label for="date-time" value="dateTime">Date and Time:</label>
+        <input type="datetime-local" id="date-time" required><br><br>
+    
+        <p style="font-size: 12px; color: #3c9e40;">Note: You must vaccinate your child within a time period of 60 minutes of scheduled time!</p>
+    
+        <label for="vaccine-name" value="vaccineName">Name of Vaccine:</label>
+        <select id="vaccine-name" required></select><br><br>
+        
+
+        <button type="submit" id="book-slot" onclick="">Book Slot</button>
+
+
+        <div class="popup-container" id="popup">
+            <p>Your slot is booked successfully!</p>
+            <button onclick="hidePopup()">Close</button>
+        </div>
+
+    </form>
+
+    <script>
+    
+const hospitalDropdown = document.getElementById('hospital-dropdown');
+const vaccineDropdown = document.getElementById('vaccine-name');
+
+const hospitalVaccines = {
+    hospital1: ["Measles and Mumps", "Chicken-Pox"],
+    hospital2: ["Rota Virus", "Diphtheria"],
+    hospital3: ["Measles", "Rubella"],
+    hospital4: ["Jaundice", "Diphtheria"],
+    hospital5: ["Measles", "Diarrhoea"]
+};
+
+hospitalDropdown.addEventListener('change', (event) => {
+    const selectedHospital = event.target.value;
+    const vaccines = hospitalVaccines[selectedHospital];
+    
+    //vaccineDropdown.innerHTML = '';
+
+    vaccines.forEach(vaccine => {
+        const option = document.createElement('option');
+        option.value = vaccine;
+        option.textContent = vaccine;
+        vaccineDropdown.appendChild(option);
+    });
+});
+document.getElementById('book-slot').addEventListener('click'), async function() {
+    const childName = document.getElementById('child-name').value;
+    const hospital = document.getElementById('hospital-dropdown').value;
+    const dateTime = document.getElementById('date-time').value;
+    const vaccineName = document.getElementById('vaccine-name').value;
+}
+
+
+function showPopup(event) {
+    event.preventDefault();
+    document.getElementById('popup').style.display = 'block';
+}
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        </script>
+        </body>
+
+</html>

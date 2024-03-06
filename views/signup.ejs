@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Form</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet">  
+        <link rel="stylesheet" href="styleSignup.css">
+        <!-- <script src="register_script.js"></script> -->
+        <style>
+              * {
+      box-sizing: border-box;
+      margin: 0;
+  }
+  
+  body {
+      font-family: 'Mooli', sans-serif;
+      background-image: url('https://media.istockphoto.com/id/1400343606/photo/vaccine-and-injection-3d-rendering.webp?b=1&s=170667a&w=0&k=20&c=X42HkGVK89CIx456mONPrbAPKezO-hetmZDnQbB2T-w=');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(9 50 118);
+      font-weight: 600;
+  }
+  
+  .registration-form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      width: 600px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+  
+  .registration-form h1 {
+      text-align: center;
+      color: rgb(9 50 118);
+      font-family: 'Mooli', sans-serif;
+      text-shadow: 2px 2px 4px rgba(99, 94, 94, 0.5);
+  
+  }
+  
+  .main-form {
+      margin-top: 30px;
+  }
+  
+  .form-group {
+      margin-top: 17px;
+      margin-bottom: 8px;
+  }
+  
+  .registration-form label {
+      display: block;
+      margin-bottom: 5px;
+  }
+  
+  .registration-form input[type="text"],
+  .registration-form input[type="date"],
+  .registration-form input[type="number"],
+  .registration-form input[type="email"],
+  .registration-form input[type="password"] {
+      font-family: 'Mooli', sans-serif;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+  }
+  
+  .registration-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-family: 'Mooli', sans-serif;
+      font-size: 15px;
+      color: rgb(18, 73, 160);
+  }
+  
+  #child1{
+      width: 10%;
+      background-color: #0056b3;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      height: 40px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      font-weight: 500;
+      font-family: 'Mooli', sans-serif;
+      text-shadow: 2px 2px 4px rgba(8, 11, 85, 0.5);
+  
+  }
+  
+  #reg{
+      width: 50%;
+      background-color: rgb(8, 44, 81);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      margin-top: 10px;
+      margin-left: 150px;
+      height: 40px;
+      font-size: 18px;
+      letter-spacing: 1px;
+      font-weight: 600;
+      font-family: 'Mooli', sans-serif;
+      text-shadow: 2px 2px 4px rgba(8, 11, 85, 0.5);
+  }
+  
+  #reg:hover {
+      background-color: #0056b3;
+  }
+  
+  .error-message {
+      color: red;
+      font-size: 12px;
+  }
+  
+  .required {
+      color: red;
+      /* Change the color as needed */
+      margin-left: 2px;
+      /* Adjust the margin for spacing */
+  }
+        </style>
+    </head>
+
+    <body>
+        <div class="registration-form">
+            <h1>Registration Form</h1>
+            <form action="/signup" method="POST">
+                <div class="main-form">
+
+                    <h2>Parent/Guardian Information</h2>
+                    <div class="form-group">
+                        <label for="username">Username<span class="required">*</span> :</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Set Password<span class="required">*</span> :</label>
+                        <input type="password" id="password" name="password"  minlength="8"required>
+                        <div class="error-message" id="passwordError"></div>
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <label for="confirmPassword">Confirm Password<span class="required">*</span>:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" minlength="8" required>
+                        <div class="error-message" id="confirmPasswordError"></div>
+                    </div> -->
+
+                    <div class="form-group">
+                        <label for="parentName">Parent/Guardian's Name<span class="required">*</span> :</label>
+                        <input type="text" id="parent" name="parentName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number<span class="required">*</span> :</label>
+                        <input type="text" id="contactNumber" name="contactNumber" maxlength="10" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email<span class="required">*</span> :</label>
+                        <input type="email" id="emailid" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address<span class="required">*</span> :</label>
+                        <textarea id="address" name="address" required></textarea>
+                    </div>
+
+                    <br>
+                    <h2>Child Information</h2>
+                    <div style="padding-bottom: 20px; padding-top: 20px;">
+                    <div class="childReg">
+                        <label for="childName">Child's Name<span class="required">*</span> :</label>
+                        <input type="text" id="child" name="childname" required>
+                    </div>
+
+                    <div class="childReg">
+                        <label for="dateOfBirth">Date of Birth<span class="required">*</span> :</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+
+
+                    <div class="childReg" style="padding-bottom: 10px;">
+                        <label for="birthCertificate">Upload Birth Certificate<span class="required">*</span> : </label>
+                        <input type="file" id="bc" name="birthcert" accept=".jpg, .jpeg, .png, .pdf" required>
+                    </div>
+                      <br>
+                    <div class="childReg" style="padding-bottom: 12px;">
+                      <label for="aadharImage">Upload Child's/Parents Aadhar Card<span class="required">*</span> : </label>
+                      <input type="file" id="aadhar" name="aadhar" accept=".jpg, .jpeg, .png" required>
+                  </div>
+                    <br>
+                    <div class="childReg" style="padding-bottom: 10px;">
+                        <label for="medicalHistory">Medical History (if any):</label>
+                        <textarea id="medicalHistory" name="medicalHistory"></textarea>
+                    </div>
+                </div>
+                    
+
+                    <!-- <div id="childR"></div>
+                    <button id="child1">Add Child</button> -->
+
+                    <!-- <script>
+                            let x = `<div class="childReg">
+                                        <label for="childName">Child's Name<span class="required">*</span> :</label>
+                                        <input type="text" id="childName" name="childName" required>
+                                    </div>
+
+                                    <div class="childReg">
+                                        <label for="dateOfBirth">Date of Birth<span class="required">*</span> :</label>
+                                        <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                                    </div>
+                                    <div class="childReg">
+                                        <label for="aadharNumber">Child's Aadhar Card Number: </label>
+                                        <input type="text" id="aadharNumber" name="aadharNumber" pattern="[0-9]{12}" maxlength="12"
+                                            placeholder="Enter 12-digit Father's Aadhar Card number">
+                                    </div>
+                                    <div class="childReg" style="padding-bottom: 12px;">
+                                        <label for="aadharImage">Upload Child's Aadhar Card: </label>
+                                        <input type="file" id="aadharImage" name="aadharImage" accept=".jpg, .jpeg, .png">
+                                    </div>
+                                    <div class="childReg" style="padding-bottom: 10px;">
+                                        <label for="birthCertificate">Upload Birth Certificate</label>
+                                        <input type="file" id="birthCertificate" name="birthCertificate" accept=".jpg, .jpeg, .png, .pdf">
+                                    </div>
+                                    <div class="childReg" style="padding-bottom: 10px;">
+                                        <label for="medicalHistory">Medical History (if any):</label>
+                                        <textarea id="medicalHistory" name="medicalHistory" rows="6" cols="114"></textarea>
+                                    </div>
+                                    <hr> <br>`;
+                            
+                                document.getElementById("child").
+                                addEventListener("click", function () {
+                                    document.getElementById("childR").
+                                    innerHTML += x;
+                            });
+    function validateForm() {
+    var password = document.getElementById("password").value;
+    var confirmPassword = document.getElementById("confirmPassword").value;
+    var passwordError = document.getElementById("passwordError");
+    var confirmPasswordError = document.getElementById("confirmPasswordError");
+
+    var uppercaseRegex = /[A-Z]/;
+    var specialCharacterRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/;
+    var numberRegex = /\d/;
+
+    if (!uppercaseRegex.test(password) || !specialCharacterRegex.test(password) || !numberRegex.test(password)) {
+        passwordError.innerHTML = "(Password must contain at least one uppercase letter, one special character, and one number)";
+        return false;
+    } else {
+        passwordError.innerHTML = "";
+    }
+
+    if (password !== confirmPassword) {
+        confirmPasswordError.innerHTML = "(Passwords do not match)";
+        return false;
+    } else {
+        confirmPasswordError.innerHTML = "";
+    }
+
+    return true;
+}
+                    </script> -->
+
+<input type="submit" id="reg" class="submitBtn" value="Register">
+
+                </div>
+            </form>
+        </div>
+    </body>
+
+</html>

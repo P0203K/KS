@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" ></script>
+
+<body background="https://images.unsplash.com/photo-1579546928686-286c9fbde1ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGlnaHQlMjBjb2xvciUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" style="background-repeat: no-repeat; background-attachment: fixed; background-size: 100%;">
+    <div id="map"></div>
+<script>
+    var map = L.map('map').setView([18.97511, 72.82393], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+const data = {
+    Wockhardt:{
+        coords:[18.97511, 72.82393],
+        title: "Wockhardt Hospital, Thane",
+        website: 'https://www.google.com'
+    },
+    BreachCandy:{
+        coords: [18.97255, 72.80427],
+        title: "Breach Candy Hospital, South Mumbai",
+        website: 'https://www.google.com'
+    },
+    Punamiya:{
+        coords:[19.01241,72.83436],
+        title: "Punamiya Hospital, Dadar(W)",
+        website: 'https://www.google.com'
+    },
+    Balaji:{
+        coords:[18.97727,72.83533],
+        title: "Balaji Hospital, Byculla",
+        website: 'https://www.google.com'
+    },
+    Kasturba:{
+        coords:[18.98413,72.83005],
+        title: "Kasturba Hospital, Dadar(W)",
+        website: 'https://www.google.com'
+    },
+};
+
+    </script>
+</body>
+</html>
