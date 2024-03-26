@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Tags required for
+	Progressive Web App -->
+        <meta name=
+        "apple-mobile-web-app-status-bar"
+                content="#aa7700">
+        <meta name="theme-color"
+                content="black">
+
+        <!-- Manifest File link -->
+        <link rel="manifest"
+		href="manifest.json">
     <title>Home Page</title>
     <link rel="stylesheet" href="C:\\Users\\Preeti Khamkar\\OneDrive\\Desktop\\KS-master\\views\\home.css">
     <link rel="stylesheet" href="C:\\Users\\Preeti Khamkar\\OneDrive\\Desktop\\KS-master\\views\\flip.css">
@@ -110,12 +121,36 @@
     </style>
 </head>
 <body>
+    <script>
+    if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/serviceworker.js')
+            .then(registration => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+                console.error('Service Worker registration failed:', error);
+            });
+    });
+}
+if ('Notification' in window) {
+    Notification.requestPermission().then(function(permission) {
+        if (permission === "granted") {
+            console.log("Notification permission granted.");
+        } else {
+            console.warn("Notification permission denied.");
+        }
+    });
+}
+
+    </script>
+    
 <div class="container">
     <div class="home">
         <header  height=100vh>
             <div id="header">
                 <a href="#">
-                    <img src="C:\\Users\\Preeti Khamkar\\OneDrive\\Desktop\\KiddoShield\\Photos\\Free_Sample_By_Wix-removebg-preview.png" alt="logo" id="logo" >
+                    <img src="C:\\Users\\Preeti Khamkar\\OneDrive\\Desktop\\KS-master\\a.jpeg" alt="logo" id="logo" >
                 </a>
                 <div id="hbuttons" style="float: left;" align:centre>
                     <a href="index.html"><button class="b" id="h">HOME</button></a>
@@ -145,7 +180,7 @@
                                 
                                 <!-- Create a flip card front side -->
                                 <div class="flip-card-front">
-                                    <img src="C:\Users\Preeti Khamkar\OneDrive\Desktop\KiddoShield\Photos\vaccine1" class="gH">
+                                    <img src="a.jpeg" class="gH">
                                 </div>
                             
                                 <!-- Create a flip card back side -->
@@ -169,7 +204,7 @@
                                 
                                 <!-- Create a flip card front side -->
                                 <div class="flip-card-front">
-                                    <img src="C:\Users\Preeti Khamkar\OneDrive\Desktop\KiddoShield\Photos\hospital2.jpeg" class="gH">
+                                    <img src="a.jpeg" class="gH">
                                 </div>
                             
                                 <!-- Create a flip card back side -->
@@ -193,7 +228,7 @@
                                 
                                 <!-- Create a flip card front side -->
                                 <div class="flip-card-front">
-                                    <img src="C:\Users\Preeti Khamkar\OneDrive\Desktop\KiddoShield\Photos\appointment1.jpeg" class="gH">
+                                    <img src="a.jpeg" class="gH">
                                 </div>
                             
                                 <!-- Create a flip card back side -->
